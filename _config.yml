@@ -1,0 +1,8 @@
+title: Der-gute-mensch-von-sezuan
+description: Unsere Interpretation der dritten Szene von "Der gute Mensch von Sezuan "
+google_analytics: 
+show_downloads: true
+theme: jekyll-theme-midnight
+
+gems:
+  - jekyll-mentions
