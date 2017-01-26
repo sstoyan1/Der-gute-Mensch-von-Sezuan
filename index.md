@@ -36,7 +36,23 @@ Wir hoffen, dass diese Seite eine Überblick über unsere bisherigen Erfolge sch
 - Erste Version der VR Anwendung bereitstellen 
   
 
-** Ziele **
+**Sprintwochen 12.1 - 19.1**
+
+- Alle benötigten Objekte wurden erstellt
+
+- Landschaft + Objekte wurden in A-Frame geladen
+
+- Synchronsprecher gefunden
+
+
+**Sprintwochen 19.1 - 26.1**
+
+- Interaktions möglichkeiten einbinden
+
+- Szene in bewegung setzten
+
+- Figuren in bewegung setzen
+
  
 
   
