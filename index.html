@@ -1,0 +1,275 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<script src="https://aframe.io/releases/0.3.2/aframe.min.js"></script>
+		<script src="./aframe.min.js"></script>
+		    <script src="./aframe-particle-system-component.js"></script>
+			 <script src="https://rawgit.com/IdeaSpaceVR/aframe-particle-system-component/master/dist/aframe-particle-system-component.min.js"></script>
+	</head>
+	
+	<body>
+		<a-scene>
+
+			<a-sound src="src: url(airplane.mp3)" autoplay="true" position="0 80 0" volume="1"></a-sound>
+			<a-sound src="src: url(birds.wav)" autoplay="true" loop="true" volume="1"></a-sound>
+			<a-sound src="src: url(Komplett.mp3)" autoplay="true" volume="50"></a-sound>
+
+			<a-assets>
+				<a-asset-item id="bodenO" src="models/Boden.obj"></a-asset-item>
+				<a-asset-item id="bodenM" src="models/Boden.mtl"></a-asset-item>
+				<a-asset-item id="flussO" src="models/Fluss.obj"></a-asset-item>
+				<a-asset-item id="flussM" src="models/Fluss.mtl"></a-asset-item>
+				<a-asset-item id="shenTeO" src="models/ShenTe.obj"></a-asset-item>
+				<a-asset-item id="shenTeM" src="models/ShenTe.mtl"></a-asset-item>
+				<a-asset-item id="sunO" src="models/Sun.obj"></a-asset-item>
+				<a-asset-item id="sunM" src="models/Sun.mtl"></a-asset-item>
+				<a-asset-item id="wasserVerkäuferO" src="models/Wasserverkaeufer.obj"></a-asset-item>
+				<a-asset-item id="wasserVerkäuferM" src="models/Wasserverkaeufer.mtl"></a-asset-item>
+				<a-asset-item id="prostituierte1O" src="models/Prostituierte1.obj"></a-asset-item>
+				<a-asset-item id="prostituierte1M" src="models/Prostituierte1.mtl"></a-asset-item>
+				<a-asset-item id="prostituierte2O" src="models/Prostituierte2.obj"></a-asset-item>
+				<a-asset-item id="prostituierte2M" src="models/Prostituierte2.mtl"></a-asset-item>
+				<a-asset-item id="baum1" src="models/Baum1_Farbe1.obj"></a-asset-item>
+				<a-asset-item id="baum1hg" src="models/Baum1_Farbe1.mtl"></a-asset-item>
+				<a-asset-item id="baum1mg" src="models/Baum1_Farbe2.mtl"></a-asset-item>
+				<a-asset-item id="baum1r" src="models/Baum1_Farbe3.mtl"></a-asset-item>
+				<a-asset-item id="baum1dg" src="models/Baum1_Farbe4.mtl"></a-asset-item>
+				<a-asset-item id="baum2O" src="models/Baum.obj"></a-asset-item>
+				<a-asset-item id="baum2M" src="models/Baum.mtl"></a-asset-item>
+				<a-asset-item id="baum3O" src="models/Bonsai.obj"></a-asset-item>
+				<a-asset-item id="baum3M" src="models/Bonsai.mtl"></a-asset-item>
+				<a-asset-item id="baum4O" src="models/Tanne.obj"></a-asset-item>
+				<a-asset-item id="baum4M" src="models/Tanne.mtl"></a-asset-item>
+				<a-asset-item id="brueckeO" src="models/bruecke.obj"></a-asset-item>
+				<a-asset-item id="brueckeM" src="models/bruecke.mtl"></a-asset-item>
+				<a-asset-item id="turmO" src="models/komischerTurm.obj"></a-asset-item>
+				<a-asset-item id="turmM" src="models/komischerTurm.mtl"></a-asset-item>
+				<a-asset-item id="bankO" src="models/Parkbank.obj"></a-asset-item>
+				<a-asset-item id="bankM" src="models/Parkbank.mtl"></a-asset-item>
+				<a-asset-item id="teeHausO" src="models/Teehaus.obj"></a-asset-item>
+				<a-asset-item id="teeHausM" src="models/Teehaus.mtl"></a-asset-item>
+				<a-asset-item id="weideO" src="models/Weide.obj"></a-asset-item>
+				<a-asset-item id="weideM" src="models/Teehaus.mtl"></a-asset-item>
+				<audio id="talk1" src="sounds/1.szene.mp3" preload></audio>
+				<audio id="talk2" src="sounds/2.Szene.mp3" preload></audio>
+				<audio id="talk3" src="sounds/3.Szene.mp3" preload></audio>
+				<audio id="talk4" src="sounds/Szene4.1.mp3" preload></audio>
+				<audio id="talk5" src="sounds/Szene4.2.mp3" preload></audio>
+				<audio id="talk6" src="sounds/Szene4.3.mp3" preload></audio>
+				<audio id="talk7" src="sounds/Szene4.4.mp3" preload></audio>
+				<audio id="talk8" src="sounds/Szene5.1.mp3" preload></audio>
+				<audio id="talk9" src="sounds/Szene5.2.mp3" preload></audio>
+				<audio id="talk10" src="sounds/Szene5.3.mp3" preload></audio>
+			</a-assets>
+
+			<a-sky color="#6C99C9"></a-sky>
+			<a-entity position="0 2.25 -15" particle-system="preset: rain"></a-entity>
+			
+			<a-entity position="0.88 0 12.49" rotation="0 -26.7 0">
+				<a-animation attribute="position" to="4.64 0 4.75" dur="10000" easing="linear"></a-animation>
+				<a-animation attribute="position" from="4.64 0 4.75" to="26.5 0 4.75" dur="25000" delay="10000" easing="linear"></a-animation>
+				<a-animation attribute="position" from="26.5 0 4.75" to="26.95 0 2.92" dur="5000" delay="35000" easing="linear"></a-animation>
+				<a-animation attribute="position" from="26.95 0 2.92" to="26.5 0 4.75" dur="5000" delay="82000" easing="linear"></a-animation>
+				<a-animation attribute="position" from="26.5 0 4.75" to="13 0 4.75" dur="10000" delay="87000" easing="linear"></a-animation>
+				<a-animation attribute="position" from="13 0 4.75" to="15.74 0 3.75" dur="10000" delay="130000" easing="linear"></a-animation>
+				<a-animation attribute="position" from="15.74 0 3.75" to="12.27 0 1.51" dur="10000" delay="175000" easing="linear"></a-animation>
+				<a-animation attribute="position" from="12.27 0 1.51" to="12.3 0 1.92" dur="10000" delay="218000" easing="linear"></a-animation>
+  				<a-camera></a-camera>
+			</a-entity>
+			<a-entity obj-model="obj: #shenTeO; mtl: #shenTeM" position="36.5 0 -21.7" rotation="0 -12.08" scale="0.05 0.05 0.05" visible="" material="">
+				<a-animation attribute="position" to="36.5 0 -15" dur="8000" delay="38800" easing="linear"></a-animation>
+				<a-animation attribute="position" from= "36.5 0 -15" to="25.13 0 -1.81" dur="10000" delay="46800" easing="linear"></a-animation>
+                <a-animation attribute="rotation" from ="0 -12.08 0" to="0 -50 0" dur="2000" delay="46800" easing="linear"></a-animation>
+                <a-animation attribute="rotation" from ="0 -50" to="0 -91 0" dur="1000" delay="56800" easing="linear"></a-animation>
+                <a-animation attribute="position" from= "25.13 0 -1.81" to="21.43 0 -1.81" dur="4000" delay="85000" easing="linear"></a-animation>
+                <a-animation attribute="rotation" from ="0 -91 0" to="0 -80.21 0" dur="600" delay="89000" easing="linear"></a-animation>
+                <a-animation attribute="rotation" from ="0 -80.21 0" to="0 12.03 0" dur="800" delay="114000" easing="linear"></a-animation>
+                <a-animation attribute="position" from= "21.43 0 -1.81" to="21.43 0 0.37" dur="2000" delay="114800" easing="linear"></a-animation>
+                <a-animation attribute="rotation" from ="0 12.03 0" to="0 -67.61 0" dur="800" delay="116800" easing="linear"></a-animation>
+                <a-animation attribute="position" from= "21.43 0 0.37" to="19.89 0 0.86" dur="2000" delay="117600" easing="linear"></a-animation>
+                <a-animation attribute="rotation" from ="0 -67.61 0" to="0 -96 0" dur="800" delay="119600" easing="linear"></a-animation>
+				<a-animation attribute="position" from= "19.89 0 0.86" to="18.33 0 0.86" dur="1000" delay="188000" easing="linear"></a-animation>
+				<a-animation attribute="position" from= "18.33 0 0.86" to="16.77 0 2.65" dur="1500" delay="189000" easing="linear"></a-animation>
+				<a-animation attribute="rotation" from ="0 -96 0" to="0 -177 0" dur="1000" delay="210000" easing="linear"></a-animation>
+				<a-animation attribute="rotation" from ="0 -177 0" to="0 84 0" dur="1000" delay="218000" easing="linear"></a-animation>
+				<a-animation attribute="position" from= "16.77 0 2.65" to="17.86 0 2.65" dur="1000" delay="219000" easing="linear"></a-animation>
+				<a-animation attribute="rotation" from ="0 84 0" to="0 -95 0" dur="1000" delay="220000" easing="linear"></a-animation>
+				<a-animation attribute="rotation" from ="0 -95 0" to="0 -122 0" dur="500" delay="228000" easing="linear"></a-animation>
+				<a-animation attribute="rotation" from ="0 -122 0" to="0 -95 0" dur="500" delay="234000" easing="linear"></a-animation>
+				<a-animation attribute="rotation" from ="0 -95 0" to="0 -122 0" dur="500" delay="252000" easing="linear"></a-animation>
+				<a-animation attribute="rotation" from ="0 -122 0" to="0 -95 0" dur="500" delay="376000" easing="linear"></a-animation>
+				<a-animation attribute="rotation" from ="0 -95 0" to="-6.88 -95 1.72" dur="500" delay="378000" easing="linear"></a-animation>
+				<a-animation attribute="rotation" from ="-6.88 -95 1.72" to="0 -95 0" dur="500" delay="380000" easing="linear"></a-animation>
+				<a-animation attribute="rotation" from ="0 -95 0" to="0 -122 0" dur="500" delay="382000" easing="linear"></a-animation>
+				<a-animation attribute="rotation" from ="0 -122 0" to="0 22.92 0" dur="1000" delay="459000" easing="linear"></a-animation>
+				<a-animation attribute="position" from= "17.86 0 2.65" to="18.55 0 4.58" dur="1000" delay="460000" easing="linear"></a-animation>
+				<a-animation attribute="rotation" from ="0 22.92 0" to="0 87.66 0" dur="1000" delay="461000" easing="linear"></a-animation>
+				<a-animation attribute="position" from= "18.55 0 4.58" to="22.81 0 4.58" dur="3000" delay="462000" easing="linear"></a-animation>
+				<a-animation attribute="rotation" from ="0 87.66 0" to="0 178.19 0" dur="1000" delay="465000" easing="linear"></a-animation>
+				<a-animation attribute="position" from= "22.81 0 4.58" to="22.81 0 -1.33" dur="4000" delay="466000" easing="linear"></a-animation>
+				<a-animation attribute="rotation" from ="0 178.19 0" to="0 -94 0" dur="1000" delay="470000" easing="linear"></a-animation>
+				<a-animation attribute="rotation" from ="0 178.19 0" to="0 -58 0" dur="1000" delay="542000" easing="linear"></a-animation>
+
+			</a-entity>
+			<a-entity obj-model="obj: #sunO; mtl: #sunM" position="14.14 3 -0.62" rotation="0 0 0" scale="0.21 0.21 0.21" visible="" material="">
+				<a-animation attribute="rotation" to="0 180 0" dur="1500" delay="18000" easing="linear"></a-animation>
+				<a-animation attribute="rotation" from="0 180 0" to="0 0 0" dur="1500" delay="26000" easing="linear"></a-animation>
+				<a-animation attribute="rotation" from="0 0 0" to="0 100 0" dur="800" delay="76000" easing="linear"></a-animation>
+				<a-animation attribute="rotation" from="0 100 0" to="0 0 0" dur="800" delay="79500" easing="linear"></a-animation>
+				<a-animation attribute="rotation" from="0 0 0" to="0 100 0" dur="800" delay="95000" easing="linear"></a-animation>
+				<a-animation attribute="rotation" from="0 100 0" to="0 0 0" dur="800" delay="106000" easing="linear"></a-animation>
+				<a-animation attribute="rotation" from="0 0 0" to="0 100 0" dur="800" delay="110000" easing="linear"></a-animation>
+				<a-animation attribute="rotation" from="0 100 0" to="0 50 0" dur="2500" delay="117000" easing="linear"></a-animation>
+				<a-animation attribute="position" to="15.62 3.36 0.52" dur="1000" delay="128000" easing="linear"></a-animation>
+				<a-animation attribute="position" from ="15.62 3.36 0.52" to="17.26 0 0.72" dur="600" delay="129000" easing="linear"></a-animation>
+				<a-animation attribute="rotation" from="0 50 0" to="0 84 0" dur="1000" delay="130000" easing="linear"></a-animation>
+				<a-animation attribute="rotation" from="0 84 0" to="0 -90 0" dur="2000" delay="177000" easing="linear"></a-animation>
+				<a-animation attribute="position" from ="17.26 0 0.72" to="16.9 0 0.72" dur="500" delay="179000" easing="linear"></a-animation>
+				<a-animation attribute="rotation" from="0 -90 0" to="0 84 0" dur="1000" delay="185000" easing="linear"></a-animation>
+				<a-animation attribute="rotation" from="0 84 0" to="0 -90 0" dur="1000" delay="188000" easing="linear"></a-animation>
+				<a-animation attribute="rotation" from="0 -90 0" to="0 -65 0" dur="600" delay="191000" easing="linear"></a-animation>
+				<a-animation attribute="rotation" from="0 -65 0" to="0 0 0" dur="600" delay="209000" easing="linear"></a-animation>
+				<a-animation attribute="position" from ="16.9 0 0.72" to="16.9 0 1.32" dur="1000" delay="216000" easing="linear"></a-animation>
+				<a-animation attribute="rotation" from="0 0 0" to="0 90 0" dur="1000" delay="218500" easing="linear"></a-animation>
+				<a-animation attribute="position" from ="16.9 0 1.32" to="17.52 0 1.32" dur="1000" delay="219500" easing="linear"></a-animation>
+				<a-animation attribute="rotation" from="0 90 0" to="0 -90 0" dur="1000" delay="220500" easing="linear"></a-animation>
+				<a-animation attribute="rotation" from="0 -90 0" to="0 -10 0" dur="1000" delay="222000" easing="linear"></a-animation>
+				<a-animation attribute="rotation" from="0 -10 0" to="0 -90 0" dur="1000" delay="272000" easing="linear"></a-animation>
+				<a-animation attribute="rotation" from="0 -90 0" to="0 -10 0" dur="1000" delay="300000" easing="linear"></a-animation>
+				<a-animation attribute="rotation" from="0 -10 0" to="0 -90 0" dur="1000" delay="313000" easing="linear"></a-animation>
+				<a-animation attribute="rotation" from="0 -90 0" to="0 -10 0" dur="1000" delay="324000" easing="linear"></a-animation>
+				<a-animation attribute="rotation" from="0 -10 0" to="0 -90 0" dur="1000" delay="387000" easing="linear"></a-animation>
+				<a-animation attribute="rotation" from="0 -90 0" to="0 -10 0" dur="1000" delay="394000" easing="linear"></a-animation>
+				<a-animation attribute="rotation" from="0 -10 0" to="0 -100 0" dur="1000" delay="440000" easing="linear"></a-animation>
+				<a-animation attribute="position" from ="17.52 0 1.32" to="18.35 0 1.32" dur="1000" delay="463000" easing="linear"></a-animation>
+				<a-animation attribute="rotation" from="0 -100 0" to="-85.37 -122.61 -42.97" dur="1000" delay="475000" easing="linear"></a-animation>
+
+
+			</a-entity>
+			<a-entity obj-model="obj: #wasserVerkäuferO; mtl: #wasserVerkäuferM" position="-37.73 0 19.63" rotation="0 116.88 0" scale="0.21 0.21 0.21" visible="" material="">
+				<a-animation attribute="position" to="-26.53 0 18.26" dur="10000" delay="390000" easing="linear"></a-animation>
+				<a-animation attribute="position" from="-26.53 0 18.26" to="0.37 0 0.59" dur="40000" delay="400000" easing="linear"></a-animation>
+				<a-animation attribute="rotation" to="0 91.67 0" dur="1000" delay="440000" easing="linear"></a-animation>
+				<a-animation attribute="position" from="0.37 0 0.59" to="5.3 0 0.59" dur="4000" delay="441000" easing="linear"></a-animation>
+				<a-animation attribute="position" from="5.3 0 0.59" to="5.58 0.23 0.59" dur="800" delay="445000" easing="linear"></a-animation>
+				<a-animation attribute="position" from="5.58 0.23 0.59" to="6.13 0.23 0.59" dur="1000" delay="445800" easing="linear"></a-animation>
+				<a-animation attribute="position" from="6.13 0.23 0.59" to="6.42 0.46 0.59" dur="800" delay="446800" easing="linear"></a-animation>
+				<a-animation attribute="position" from="6.42 0.46 0.59" to="7.45 0.46 0.59" dur="1000" delay="447600" easing="linear"></a-animation>
+				<a-animation attribute="position" from="7.45 0.46 0.59" to="7.7 0.69 0.59" dur="800" delay="448600" easing="linear"></a-animation>
+				<a-animation attribute="position" from="7.7 0.69 0.59" to="8.72 0.69 0.59" dur="1000" delay="449400" easing="linear"></a-animation>
+				<a-animation attribute="position" from="8.72 0.69 0.5" to="9.01 0.92 0.59" dur="800" delay="450400" easing="linear"></a-animation>
+				<a-animation attribute="position" from="9.01 0.92 0.59" to="10.02 0.92 0.59" dur="1000" delay="451200" easing="linear"></a-animation>
+				<a-animation attribute="position" from="10.02 0.92 0.59" to="10.3 1.15 0.59" dur="800" delay="452200" easing="linear"></a-animation>
+				<a-animation attribute="position" from="10.3 1.15 0.59" to="11.31 1.15 0.59" dur="1000" delay="453000" easing="linear"></a-animation>
+				<a-animation attribute="position" from="11.31 1.15 0.59" to="11.57 1.38 0.59" dur="800" delay="454000" easing="linear"></a-animation>
+				<a-animation attribute="position" from="11.57 1.38 0.59" to="13.02 1.38 0.59" dur="1000" delay="454800" easing="linear"></a-animation>
+				<a-animation attribute="position" from="13.02 1.38 0.59" to="14.73 1.38 0.59" dur="1500" delay="465000" easing="linear"></a-animation>
+				<a-animation attribute="position" from="14.73 1.38 0.59" to="15.02 1.15 0.59" dur="800" delay="466500" easing="linear"></a-animation>
+				<a-animation attribute="position" from="15.02 1.15 0.59" to="16.05 1.15 0.59" dur="1000" delay="467300" easing="linear"></a-animation>
+				<a-animation attribute="position" from="16.05 1.15 0.59" to="16.29 0.92 0.59" dur="800" delay="468300" easing="linear"></a-animation>
+				<a-animation attribute="position" from="16.29 0.92 0.59" to="17.31 0.92 0.59" dur="1000" delay="469100" easing="linear"></a-animation>
+				<a-animation attribute="position" from="17.31 0.92 0.59" to="17.60 0.69 0.59" dur="800" delay="470100" easing="linear"></a-animation>
+				<a-animation attribute="position" from="17.60 0.69 0.59" to="18.61 0.69 0.59" dur="1000" delay="470900" easing="linear"></a-animation>
+				<a-animation attribute="position" from="18.61 0.69 0.59" to="18.89 0.46 0.59" dur="800" delay="471900" easing="linear"></a-animation>
+				<a-animation attribute="position" from="18.89 0.46 0.59" to="19.92 0.46 0.59" dur="1000" delay="472700" easing="linear"></a-animation>
+				<a-animation attribute="position" from="19.92 0.46 0.59" to="20.16 0.23 0.59" dur="800" delay="473700" easing="linear"></a-animation>
+				<a-animation attribute="position" from="20.16 0.23 0.59" to="20.79 0.23 0.59" dur="1000" delay="474500" easing="linear"></a-animation>
+				<a-animation attribute="position" from="20.79 0.23 0.59" to="21.04 0 0.59" dur="800" delay="475500" easing="linear"></a-animation>
+				<a-animation attribute="position" from="21.04 0 0.59" to="21.27 0 0.59" dur="800" delay="476300" easing="linear"></a-animation>
+			</a-entity>
+			<a-entity obj-model="obj: #prostituierte1O; mtl: #prostituierte1M" position="-0.18 0 1.34" rotation="0 99.69 0" scale="0.17 0.17 0.17" visible="" material="">
+				<a-animation attribute="position" to="4.96 0 0.63" dur="6000" easing="linear"></a-animation>
+				<a-animation attribute="rotation" to="0 88.81 0" dur="1000" delay="3000" easing="linear"></a-animation>
+				<a-animation attribute="position" from="4.96 0 0.63" to="5.05 0.22 0.63" dur="500" delay="6000" easing="linear"></a-animation>
+				<a-animation attribute="position" from="5.05 0.22 0.63" to="5.84 0.22 0.63" dur="1000" delay="6500" easing="linear"></a-animation>
+				<a-animation attribute="position" from="5.84 0.22 0.63" to="5.93 0.44 0.63" dur="500" delay="7500" easing="linear"></a-animation>
+				<a-animation attribute="position" from="5.93 0.44 0.63" to="7.13 0.44 0.63" dur="1200" delay="8000" easing="linear"></a-animation>
+				<a-animation attribute="position" from="7.13 0.44 0.63" to="7.22 0.66 0.63" dur="500" delay="9200" easing="linear"></a-animation>
+				<a-animation attribute="position" from="7.22 0.66 0.63" to="8.42 0.66 0.63" dur="1200" delay="9700" easing="linear"></a-animation>
+				<a-animation attribute="position" from="8.42 0.66 0.63" to="8.51 0.88 0.63" dur="500" delay="10900" easing="linear"></a-animation>
+				<a-animation attribute="position" from="8.51 0.88 0.63" to="9.71 0.88 0.63" dur="1200" delay="11400" easing="linear"></a-animation>
+				<a-animation attribute="position" from="9.71 0.88 0.63" to="9.8 1.12 0.63" dur="500" delay="12600" easing="linear"></a-animation>
+				<a-animation attribute="position" from="9.8 1.12 0.63" to="11 1.12 0.63" dur="1200" delay="13100" easing="linear"></a-animation>
+				<a-animation attribute="position" from="11 1.12 0.63" to="11.09 1.36 0.63" dur="500" delay="14300" easing="linear"></a-animation>
+				<a-animation attribute="position" from="11.09 1.36 0.63" to="12.20 1.36 -2.48" dur="2000" delay="14800" easing="linear"></a-animation>
+				<a-animation attribute="rotation" from ="0 88.81 0" to="0 -15.47 0" dur="2000" delay="14800" easing="linear"></a-animation>
+				<a-animation attribute="rotation" from ="0 -15.47 0" to="0 87.66 0" dur="1000" delay="27800" easing="linear"></a-animation>
+				<a-animation attribute="position" from="12.20 1.36 -2.48" to="14.42 1.36 0.7" dur="1000" delay="27800" easing="linear"></a-animation>
+				<a-animation attribute="position" from="14.42 1.36 0.7" to="14.72 1.12 0.7" dur="500" delay="28800" easing="linear"></a-animation>
+				<a-animation attribute="position" from="14.72 1.12 0.7" to="15.72 1.12 0.7" dur="1000" delay="29300" easing="linear"></a-animation>
+				<a-animation attribute="position" from="15.72 1.12 0.7" to="16.02 0.88 0.7" dur="500" delay="30300" easing="linear"></a-animation>
+				<a-animation attribute="position" from="16.02 0.88 0.7" to="17.02 0.88 0.7" dur="1000" delay="30800" easing="linear"></a-animation>
+				<a-animation attribute="position" from="17.02 0.88 0.7" to="17.3 0.65 0.7" dur="500" delay="31800" easing="linear"></a-animation>
+				<a-animation attribute="position" from="17.3 0.65 0.7" to="18.3 0.65 0.7" dur="1000" delay="32300" easing="linear"></a-animation>
+				<a-animation attribute="position" from="18.3 0.65 0.7" to="18.58 0.42 0.7" dur="500" delay="33300" easing="linear"></a-animation>
+				<a-animation attribute="position" from="18.58 0.42 0.7" to="19.58 0.42 0.7" dur="1000" delay="33800" easing="linear"></a-animation>
+				<a-animation attribute="position" from="19.58 0.42 0.7" to="19.88 0.21 0.7" dur="500" delay="34800" easing="linear"></a-animation>
+				<a-animation attribute="position" from="19.88 0.21 0.7" to="20.7 0.21 0.7" dur="900" delay="35300" easing="linear"></a-animation>
+				<a-animation attribute="position" from="20.7 0.21 0.7" to="20.8 0 0.7" dur="300" delay="36200" easing="linear"></a-animation>
+				<a-animation attribute="position" from="20.8 0 0.7" to="22.17 0 -0.19" dur="800" delay="36500" easing="linear"></a-animation>
+				<a-animation attribute="rotation" from ="0 87.66 0" to="0 102.56 0" dur="1000" delay="82000" easing="linear"></a-animation>
+				<a-animation attribute="position" from="22.17 0 -0.19" to="28.7 0 -3.83" dur="5000" delay="82000" easing="linear"></a-animation>
+				<a-animation attribute="rotation" from ="0 102.56 0" to="0 138.08 0" dur="1000" delay="86000" easing="linear"></a-animation>
+				<a-animation attribute="position" from="28.7 0 -3.83" to="37.39 0 -19.58" dur="10000" delay="87000" easing="linear"></a-animation>
+				<a-animation attribute="rotation" from ="0 138.08 0" to="0 178.34 0" dur="1000" delay="96000" easing="linear"></a-animation>
+				<a-animation attribute="position" from="37.39 0 -19.58" to="37.39 0 -22.65" dur="4000" delay="97000" easing="linear"></a-animation>
+			</a-entity>
+			<a-entity obj-model="obj: #prostituierte2O; mtl: #prostituierte2M" position="-0.81 0 -3.04" rotation="0 90 0" scale="0.17 0.17 0.17" visible="" material="">
+				<a-animation attribute="position" to="4.96 0 -2.03" dur="6000" delay="3000" easing="linear"></a-animation>
+				<a-animation attribute="position" from="4.96 0 -2.03" to="5.05 0.22 -2.03" dur="500" delay="9000" easing="linear"></a-animation>
+				<a-animation attribute="position" from="5.05 0.22 -2.03" to="5.84 0.22 -2.03" dur="1000" delay="9500" easing="linear"></a-animation>
+				<a-animation attribute="position" from="5.84 0.22 -2.03" to="5.93 0.44 -2.03" dur="500" delay="10500" easing="linear"></a-animation>
+				<a-animation attribute="position" from="5.93 0.44 -2.03" to="7.13 0.44 -2.03" dur="1200" delay="11000" easing="linear"></a-animation>
+				<a-animation attribute="position" from="7.13 0.44 -2.03" to="7.22 0.66 -2.03" dur="500" delay="12200" easing="linear"></a-animation>
+				<a-animation attribute="position" from="7.22 0.66 -2.03" to="8.42 0.66 -2.03" dur="1200" delay="12700" easing="linear"></a-animation>
+				<a-animation attribute="position" from="8.42 0.66 -2.03" to="8.51 0.88 -2.03" dur="500" delay="13900" easing="linear"></a-animation>
+				<a-animation attribute="position" from="8.51 0.88 -2.03" to="9.71 0.88 -2.03" dur="1200" delay="14400" easing="linear"></a-animation>
+				<a-animation attribute="position" from="9.71 0.88 -2.03" to="9.8 1.12 -2.03" dur="500" delay="15600" easing="linear"></a-animation>
+				<a-animation attribute="position" from="9.8 1.12 -2.03" to="11 1.12 -2.03" dur="1200" delay="16100" easing="linear"></a-animation>
+				<a-animation attribute="position" from="11 1.12 -2.03" to="11.09 1.36 -2.03" dur="500" delay="17300" easing="linear"></a-animation>
+				<a-animation attribute="position" from="11.09 1.36 -2.03" to="12.01 1.36 -2.03" dur="1000" delay="17800" easing="linear"></a-animation>
+				<a-animation attribute="rotation" to="0 41.83 0" dur="1000" delay="17800" easing="linear"></a-animation>
+				<a-animation attribute="position" from="12.01 1.36 -2.03" to="12.55 1.36 -2.03" dur="500" delay="24000" easing="linear"></a-animation>
+				<a-animation attribute="rotation" from="0 41.83 0" to="0 87.66 0" dur="500" delay="25000" easing="linear"></a-animation>
+				<a-animation attribute="position" from="12.55 1.36 -2.03" to="14.62 1.36 -2.03" dur="1200" delay="25500" easing="linear"></a-animation>
+				<a-animation attribute="position" from="14.62 1.36 -2.03" to="14.92 1.12 -2.03" dur="500" delay="26700" easing="linear"></a-animation>
+				<a-animation attribute="position" from="14.92 1.12 -2.03" to="15.92 1.12 -2.03" dur="1000" delay="27200" easing="linear"></a-animation>
+				<a-animation attribute="position" from="15.92 1.12 -2.03" to="16.22 0.88 -2.03" dur="500" delay="28200" easing="linear"></a-animation>
+				<a-animation attribute="position" from="16.22 0.88 -2.03" to="17.22 0.88 -2.03" dur="1000" delay="28700" easing="linear"></a-animation>
+				<a-animation attribute="position" from="17.22 0.88 -2.03" to="17.5 0.65 -2.03" dur="500" delay="29700" easing="linear"></a-animation>
+				<a-animation attribute="position" from="17.5 0.65 -2.03" to="18.5 0.65 -2.03" dur="1000" delay="30200" easing="linear"></a-animation>
+				<a-animation attribute="position" from="18.5 0.65 -2.03" to="18.78 0.42 -2.03" dur="500" delay="31200" easing="linear"></a-animation>
+				<a-animation attribute="position" from="18.78 0.42 -2.03" to="19.78 0.42 -2.03" dur="1000" delay="31700" easing="linear"></a-animation>
+				<a-animation attribute="position" from="19.78 0.42 -2.03" to="20.08 0.21 -2.03" dur="500" delay="32700" easing="linear"></a-animation>
+				<a-animation attribute="position" from="20.08 0.21 -2.03" to="20.9 0.21 -2.03" dur="900" delay="33200" easing="linear"></a-animation>
+				<a-animation attribute="position" from="20.9 0.21 -2.03" to="21 0 -2.03" dur="300" delay="34100" easing="linear"></a-animation>
+				<a-animation attribute="position" from="21 0 -2.03" to="22.24 0 -1.3" dur="1000" delay="34400" easing="linear"></a-animation>
+
+				<a-animation attribute="rotation" from ="0 87.66 0" to="0 130.06 0" dur="1000" delay="82500" easing="linear"></a-animation>
+				<a-animation attribute="position" from="22.24 0 -1.3" to="33.7 0 -18.26" dur="15000" delay="83500" easing="linear"></a-animation>
+				<a-animation attribute="rotation" from ="0 130.06 0" to="0 169.6 0" dur="1000" delay="98500" easing="linear"></a-animation>
+				<a-animation attribute="position" from="33.7 0 -18.26" to="33.7 0 -21.2" dur="3000" delay="99500" easing="linear"></a-animation>
+
+
+			</a-entity>
+			<a-entity obj-model="obj: #baum1; mtl: #baum1hg" position="-2.57 0 -10.65" rotation="0 -5.73 0" scale="0.5 0.5 0.5" visible="" material=""></a-entity>
+			<a-entity obj-model="obj: #baum1; mtl: #baum1mg" position="2.16 0 4.38" rotation="0 -5.73 0" scale="0.5 0.5 0.5" visible="" material=""></a-entity>
+			<a-entity obj-model="obj: #baum1; mtl: #baum1r" position="8.61 0 -15.35" rotation="0 -5.73 0" scale="0.5 0.5 0.5" visible="" material=""></a-entity>
+			<a-entity obj-model="obj: #baum1; mtl: #baum1dg" position="-5.21 0 -3.27" rotation="0 -5.73 0" scale="0.5 0.5 0.5" visible="" material=""></a-entity>
+			<a-entity obj-model="obj: #baum2O; mtl: #baum2M" position="22.04 0 -7.95" rotation="0 -5.73 0" scale="0.1 0.1 0.1" visible="" material=""></a-entity>
+			<a-entity obj-model="obj: #baum3O; mtl: #baum3M" position="19.07 0 11.93" rotation="0 -5.73 0" scale="0.1 0.1 0.1" visible="" material=""></a-entity>
+			<a-entity obj-model="obj: #baum4O; mtl: #baum4M" position="6.61 0 9.57" rotation="0 -5.73 0" scale="0.12 0.12 0.12" visible="" material=""></a-entity>
+			<a-entity obj-model="obj: #brueckeO; mtl: #brueckeM" position="14.18 0 -2" rotation="0 0 0" scale="0.43 0.23 0.16" visible="" material=""></a-entity>
+			<a-entity obj-model="obj: #turmO; mtl: #turmM" position="29.5 0 -16.59" rotation="0 -90 0" scale="0.3 0.4 0.3" visible="" material=""></a-entity>
+			<a-entity obj-model="obj: #bankO; mtl: #bankM" position="3.2 0 0.05" rotation="0 0 0" scale="0.02 0.018 0.02" visible="" material=""></a-entity>
+			<a-entity obj-model="obj: #bankO; mtl: #bankM" position="3.13 0 -3.47" rotation="0 180 0" scale="0.02 0.018 0.02" visible="" material=""></a-entity>
+			<a-entity obj-model="obj: #teeHausO; mtl: #teeHausM" position="-31.71 0 7.6" rotation="0 90 0" scale="0.2 0.2 0.2" visible="" material=""></a-entity>
+			<a-entity obj-model="obj: #bodenO; mtl: #bodenM" position="-3.99 -1.5 -0.29" rotation="0 90 0" scale="1.43 0.35 1.96" visible="" material=""></a-entity>
+			<a-entity obj-model="obj: #flussO; mtl: #flussM" position="12.75 -0.8 -0.29" rotation="0 90 0" scale="1.43 0.53 3" visible="" material="" sound="src: url(river.wav); autoplay: true; loop: true;"></a-entity>
+			<a-entity obj-model="obj: #weideO; mtl: #weideM" position="17.5 0 1.38" rotation="0 180 0" scale="0.4 0.4 0.4" visible="" material=""></a-entity>
+
+			</a-scene>
+		
+	</body>
+	
+</html>
