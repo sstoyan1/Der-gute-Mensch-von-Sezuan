@@ -2,14 +2,15 @@
 <html>
 	<head>
 		<script src="https://aframe.io/releases/0.3.2/aframe.min.js"></script>
+		<script src="./aframe-particle-system-component.js"></script>
+		<script src="https://rawgit.com/IdeaSpaceVR/aframe-particle-system-component/master/dist/aframe-particle-system-component.min.js"></script>
 	</head>
 	
 	<body>
 		<a-scene>
 
 			<a-sound src="src: url(airplane.mp3)" autoplay="true" position="0 80 0" volume="1"></a-sound>
-			<a-sound src="src: url(birds.wav)" autoplay="true" loop="true" volume="1"></a-sound>
-			<a-sound src="src: url(Komplett.mp3)" autoplay="true" volume="50"></a-sound>
+			<a-sound src="src: url(birds.mp3)" autoplay="true" loop="true" volume="1"></a-sound>
 
 			<a-assets>
 				<a-asset-item id="bodenO" src="models/Boden.obj"></a-asset-item>
@@ -47,20 +48,26 @@
 				<a-asset-item id="teeHausM" src="models/Teehaus.mtl"></a-asset-item>
 				<a-asset-item id="weideO" src="models/Weide.obj"></a-asset-item>
 				<a-asset-item id="weideM" src="models/Teehaus.mtl"></a-asset-item>
+				<a-asset-item id="rikschaM" src="models/Rikscha.mtl"></a-asset-item>
+				<a-asset-item id="rikschaO" src="models/Rikscha.obj"></a-asset-item>
 				<audio id="talk1" src="sounds/1.szene.mp3" preload></audio>
 				<audio id="talk2" src="sounds/2.Szene.mp3" preload></audio>
 				<audio id="talk3" src="sounds/3.Szene.mp3" preload></audio>
-				<audio id="talk4" src="sounds/Szene4.1.mp3" preload></audio>
-				<audio id="talk5" src="sounds/Szene4.2.mp3" preload></audio>
-				<audio id="talk6" src="sounds/Szene4.3.mp3" preload></audio>
-				<audio id="talk7" src="sounds/Szene4.4.mp3" preload></audio>
-				<audio id="talk8" src="sounds/Szene5.1.mp3" preload></audio>
-				<audio id="talk9" src="sounds/Szene5.2.mp3" preload></audio>
-				<audio id="talk10" src="sounds/Szene5.3.mp3" preload></audio>
+				<audio id="talk31" src="sounds/3.Szene2.mp3" preload></audio>
+				<audio id="talk4" src="sounds/Szene4.mp3" preload></audio>
+				<audio id="talk5" src="sounds/Szene5.mp3" preload></audio>
+				<audio id="rain" src="rain.mp3" preload></audio>
 			</a-assets>
 
-			<a-sky color="#6C99C9"></a-sky>
-			<a-entity position="0 2.25 -15" particle-system="preset: rain"></a-entity>
+			<a-sky id="sky" color="#6C99C9"></a-sky>
+			<a-entity visible="false" position="0 2.25 -15" particle-system="preset: rain; color: #0000ff; opacity: 0.5">
+				<a-animation attribute="visible" begin="38300" to="true"></a-animation>
+			</a-entity>
+			<a-light id="light" type="ambient" color="#336699" decay="0"></a-light>
+			<a-entity id="spot" visible="false" position="17.86 2.16 2.65" rotation="-90 0 0" light="type: spot; angle: 30">
+				<a-animation attribute="visible" begin="232000" to="true"></a-animation>
+				<a-animation attribute="visible" begin="249500" to="false"></a-animation>
+			</a-entity>
 			
 			<a-entity position="0.88 0 12.49" rotation="0 -26.7 0">
 				<a-animation attribute="position" to="4.64 0 4.75" dur="10000" easing="linear"></a-animation>
@@ -71,9 +78,45 @@
 				<a-animation attribute="position" from="13 0 4.75" to="15.74 0 3.75" dur="10000" delay="130000" easing="linear"></a-animation>
 				<a-animation attribute="position" from="15.74 0 3.75" to="12.27 0 1.51" dur="10000" delay="175000" easing="linear"></a-animation>
 				<a-animation attribute="position" from="12.27 0 1.51" to="12.3 0 1.92" dur="10000" delay="218000" easing="linear"></a-animation>
+				<a-animation attribute="position" from="12.3 0 1.92" to="-11.26 0 13.09" dur="0" delay="400000" easing="linear"></a-animation>
+				<a-animation attribute="rotation" to="0 130 0" dur="0" delay="400000" easing="linear"></a-animation>
+				<a-animation attribute="position" from="-11.26 0 13.0" to="-1.58 0 2.01" dur="32000" delay="400000" easing="linear"></a-animation>
+				<a-animation attribute="position" from="-1.58 0 2.01" to="14 0 2.01" dur="20000" delay="433000" easing="linear"></a-animation>
+				<a-animation attribute="position" from="14 0 2.01" to="19 0 9" dur="10000" delay="453000" easing="linear"></a-animation>
+				<a-animation attribute="position" from="19 0 9" to="25.5 0 9" dur="10000" delay="463000" easing="linear"></a-animation>
+				<a-animation attribute="position" from="25.5 0 9" to="25.5 0 -5.5" dur="10000" delay="473000" easing="linear"></a-animation>
+				<a-animation attribute="position" from="25.5 0 -5.5" to="20.5 0 -5.5" dur="4000" delay="485000" easing="linear"></a-animation>
   				<a-camera></a-camera>
 			</a-entity>
-			<a-entity obj-model="obj: #shenTeO; mtl: #shenTeM" position="36.5 0 -21.7" rotation="0 -12.08" scale="0.05 0.05 0.05" visible="" material="">
+
+			<a-entity obj-model="obj: #rikschaO; mtl: #rikschaM" position="0.88 0 12.49" rotation="0 -26.7 0" scale="0.09 0.09 0.09" visible="" material="">
+				<a-animation attribute="position" to="4.64 0 4.75" dur="10000" easing="linear"></a-animation>
+				<a-animation attribute="rotation" to="0 0 0" dur="2000" delay="10000" easing="linear"></a-animation>
+				<a-animation attribute="position" from="4.64 0 4.75" to="26.5 0 4.75" dur="25000" delay="10000" easing="linear"></a-animation>
+				<a-animation attribute="rotation" from="0 0 0" to="0 22 0" dur="2000" delay="35000" easing="linear"></a-animation>
+				<a-animation attribute="position" from="26.5 0 4.75" to="26.95 0 2.92" dur="5000" delay="35000" easing="linear"></a-animation>
+				<a-animation attribute="position" from="26.95 0 2.92" to="26.5 0 4.75" dur="5000" delay="82000" easing="linear"></a-animation>
+				<a-animation attribute="rotation" from="0 22 0" to="0 0 0" dur="2000" delay="87000" easing="linear"></a-animation>
+				<a-animation attribute="position" from="26.5 0 4.75" to="13 0 4.75" dur="10000" delay="87000" easing="linear"></a-animation>
+				<a-animation attribute="rotation" from="0 0 0" to="0 -22 0" dur="2000" delay="97000" easing="linear"></a-animation>
+				<a-animation attribute="position" from="13 0 4.75" to="15.74 0 3.75" dur="10000" delay="130000" easing="linear"></a-animation>
+				<a-animation attribute="rotation" from="0 -22 0" to="0 -90 0" dur="5000" delay="175000" easing="linear"></a-animation>
+				<a-animation attribute="position" from="15.74 0 3.75" to="12.27 0 1.51" dur="10000" delay="175000" easing="linear"></a-animation>
+				<a-animation attribute="position" from="12.27 0 1.51" to="12.3 0 1.92" dur="10000" delay="218000" easing="linear"></a-animation>
+				<a-animation attribute="position" from="12.3 0 1.92" to="-11.26 0 13.09" dur="0" delay="400000" easing="linear"></a-animation>
+				<a-animation attribute="rotation" from="0 -90 0" to="0 90 0" dur="0" delay="400000" easing="linear"></a-animation>
+				<a-animation attribute="position" from="-11.26 0 13.0" to="-1.58 0 2.01" dur="32000" delay="400000" easing="linear"></a-animation>
+				<a-animation attribute="rotation" from="0 90 0" to="0 0 0" dur="1000" delay="432000" easing="linear"></a-animation>
+				<a-animation attribute="position" from="-1.58 0 2.01" to="14 0 2.01" dur="20000" delay="433000" easing="linear"></a-animation>
+				<a-animation attribute="position" from="14 0 2.01" to="19 0 9" dur="10000" delay="453000" easing="linear"></a-animation>
+				<a-animation attribute="position" from="19 0 9" to="25.5 0 9" dur="10000" delay="463000" easing="linear"></a-animation>
+				<a-animation attribute="position" from="25.5 0 9" to="25.5 0 -5.5" dur="10000" delay="473000" easing="linear"></a-animation>
+				<a-animation attribute="rotation" from="0 0 0" to="0 90 0" dur="2000" delay="473000" easing="linear"></a-animation>
+				<a-animation attribute="rotation" from="0 90 0" to="0 120 0" dur="2000" delay="483000" easing="linear"></a-animation>
+				<a-animation attribute="rotation" from="0 120 0" to="0 180 0" dur="2000" delay="485000" easing="linear"></a-animation>
+				<a-animation attribute="position" from="25.5 0 -5.5" to="20.5 0 -5.5" dur="4000" delay="485000" easing="linear"></a-animation>
+			</a-entity>
+			<a-entity obj-model="obj: #shenTeO; mtl: #shenTeM" position="36.5 0 -21.7" rotation="0 -12.08" scale="0.19 0.19 0.19" visible="" material="">
 				<a-animation attribute="position" to="36.5 0 -15" dur="8000" delay="38800" easing="linear"></a-animation>
 				<a-animation attribute="position" from= "36.5 0 -15" to="25.13 0 -1.81" dur="10000" delay="46800" easing="linear"></a-animation>
                 <a-animation attribute="rotation" from ="0 -12.08 0" to="0 -50 0" dur="2000" delay="46800" easing="linear"></a-animation>
@@ -88,24 +131,24 @@
 				<a-animation attribute="position" from= "19.89 0 0.86" to="18.33 0 0.86" dur="1000" delay="188000" easing="linear"></a-animation>
 				<a-animation attribute="position" from= "18.33 0 0.86" to="16.77 0 2.65" dur="1500" delay="189000" easing="linear"></a-animation>
 				<a-animation attribute="rotation" from ="0 -96 0" to="0 -177 0" dur="1000" delay="210000" easing="linear"></a-animation>
-				<a-animation attribute="rotation" from ="0 -177 0" to="0 84 0" dur="1000" delay="218000" easing="linear"></a-animation>
-				<a-animation attribute="position" from= "16.77 0 2.65" to="17.86 0 2.65" dur="1000" delay="219000" easing="linear"></a-animation>
-				<a-animation attribute="rotation" from ="0 84 0" to="0 -95 0" dur="1000" delay="220000" easing="linear"></a-animation>
-				<a-animation attribute="rotation" from ="0 -95 0" to="0 -122 0" dur="500" delay="228000" easing="linear"></a-animation>
-				<a-animation attribute="rotation" from ="0 -122 0" to="0 -95 0" dur="500" delay="234000" easing="linear"></a-animation>
-				<a-animation attribute="rotation" from ="0 -95 0" to="0 -122 0" dur="500" delay="252000" easing="linear"></a-animation>
-				<a-animation attribute="rotation" from ="0 -122 0" to="0 -95 0" dur="500" delay="376000" easing="linear"></a-animation>
-				<a-animation attribute="rotation" from ="0 -95 0" to="-6.88 -95 1.72" dur="500" delay="378000" easing="linear"></a-animation>
-				<a-animation attribute="rotation" from ="-6.88 -95 1.72" to="0 -95 0" dur="500" delay="380000" easing="linear"></a-animation>
-				<a-animation attribute="rotation" from ="0 -95 0" to="0 -122 0" dur="500" delay="382000" easing="linear"></a-animation>
-				<a-animation attribute="rotation" from ="0 -122 0" to="0 22.92 0" dur="1000" delay="459000" easing="linear"></a-animation>
-				<a-animation attribute="position" from= "17.86 0 2.65" to="18.55 0 4.58" dur="1000" delay="460000" easing="linear"></a-animation>
-				<a-animation attribute="rotation" from ="0 22.92 0" to="0 87.66 0" dur="1000" delay="461000" easing="linear"></a-animation>
-				<a-animation attribute="position" from= "18.55 0 4.58" to="22.81 0 4.58" dur="3000" delay="462000" easing="linear"></a-animation>
-				<a-animation attribute="rotation" from ="0 87.66 0" to="0 178.19 0" dur="1000" delay="465000" easing="linear"></a-animation>
-				<a-animation attribute="position" from= "22.81 0 4.58" to="22.81 0 -1.33" dur="4000" delay="466000" easing="linear"></a-animation>
-				<a-animation attribute="rotation" from ="0 178.19 0" to="0 -94 0" dur="1000" delay="470000" easing="linear"></a-animation>
-				<a-animation attribute="rotation" from ="0 178.19 0" to="0 -58 0" dur="1000" delay="542000" easing="linear"></a-animation>
+				<a-animation attribute="rotation" from ="0 -177 0" to="0 84 0" dur="0" delay="218500" easing="linear"></a-animation>
+				<a-animation attribute="position" from= "16.77 0 2.65" to="17.86 0 2.65" dur="0" delay="218500" easing="linear"></a-animation>
+				<a-animation attribute="rotation" from ="0 84 0" to="0 -95 0" dur="0" delay="218500" easing="linear"></a-animation>
+				<a-animation attribute="rotation" from ="0 -95 0" to="0 -122 0" dur="500" delay="226000" easing="linear"></a-animation>
+				<a-animation attribute="rotation" from ="0 -122 0" to="0 -95 0" dur="500" delay="232000" easing="linear"></a-animation>
+				<a-animation attribute="rotation" from ="0 -95 0" to="0 -122 0" dur="500" delay="250000" easing="linear"></a-animation>
+				<a-animation attribute="rotation" from ="0 -122 0" to="0 -95 0" dur="500" delay="374000" easing="linear"></a-animation>
+				<a-animation attribute="rotation" from ="0 -95 0" to="-6.88 -95 1.72" dur="500" delay="376000" easing="linear"></a-animation>
+				<a-animation attribute="rotation" from ="-6.88 -95 1.72" to="0 -95 0" dur="500" delay="378000" easing="linear"></a-animation>
+				<a-animation attribute="rotation" from ="0 -95 0" to="0 -122 0" dur="500" delay="380000" easing="linear"></a-animation>
+				<a-animation attribute="rotation" from ="0 -122 0" to="0 22.92 0" dur="1000" delay="457000" easing="linear"></a-animation>
+				<a-animation attribute="position" from= "17.86 0 2.65" to="18.55 0 4.58" dur="1000" delay="458000" easing="linear"></a-animation>
+				<a-animation attribute="rotation" from ="0 22.92 0" to="0 87.66 0" dur="1000" delay="459000" easing="linear"></a-animation>
+				<a-animation attribute="position" from= "18.55 0 4.58" to="22.81 0 4.58" dur="3000" delay="460000" easing="linear"></a-animation>
+				<a-animation attribute="rotation" from ="0 87.66 0" to="0 178.19 0" dur="1000" delay="463000" easing="linear"></a-animation>
+				<a-animation attribute="position" from= "22.81 0 4.58" to="22.81 0 -1.33" dur="4000" delay="464000" easing="linear"></a-animation>
+				<a-animation attribute="rotation" from ="0 178.19 0" to="0 -94 0" dur="1000" delay="468000" easing="linear"></a-animation>
+				<a-animation attribute="rotation" from ="0 -94 0" to="0 -58 0" dur="1000" delay="523000" easing="linear"></a-animation>
 
 			</a-entity>
 			<a-entity obj-model="obj: #sunO; mtl: #sunM" position="14.14 3 -0.62" rotation="0 0 0" scale="0.21 0.21 0.21" visible="" material="">
@@ -122,24 +165,23 @@
 				<a-animation attribute="rotation" from="0 50 0" to="0 84 0" dur="1000" delay="130000" easing="linear"></a-animation>
 				<a-animation attribute="rotation" from="0 84 0" to="0 -90 0" dur="2000" delay="177000" easing="linear"></a-animation>
 				<a-animation attribute="position" from ="17.26 0 0.72" to="16.9 0 0.72" dur="500" delay="179000" easing="linear"></a-animation>
-				<a-animation attribute="rotation" from="0 -90 0" to="0 84 0" dur="1000" delay="185000" easing="linear"></a-animation>
-				<a-animation attribute="rotation" from="0 84 0" to="0 -90 0" dur="1000" delay="188000" easing="linear"></a-animation>
+				<a-animation attribute="rotation" from="0 -90 0" to="0 84 0" dur="1000" delay="186000" easing="linear"></a-animation>
+				<a-animation attribute="rotation" from="0 84 0" to="0 -90 0" dur="1000" delay="189000" easing="linear"></a-animation>
 				<a-animation attribute="rotation" from="0 -90 0" to="0 -65 0" dur="600" delay="191000" easing="linear"></a-animation>
 				<a-animation attribute="rotation" from="0 -65 0" to="0 0 0" dur="600" delay="209000" easing="linear"></a-animation>
 				<a-animation attribute="position" from ="16.9 0 0.72" to="16.9 0 1.32" dur="1000" delay="216000" easing="linear"></a-animation>
-				<a-animation attribute="rotation" from="0 0 0" to="0 90 0" dur="1000" delay="218500" easing="linear"></a-animation>
-				<a-animation attribute="position" from ="16.9 0 1.32" to="17.52 0 1.32" dur="1000" delay="219500" easing="linear"></a-animation>
-				<a-animation attribute="rotation" from="0 90 0" to="0 -90 0" dur="1000" delay="220500" easing="linear"></a-animation>
-				<a-animation attribute="rotation" from="0 -90 0" to="0 -10 0" dur="1000" delay="222000" easing="linear"></a-animation>
-				<a-animation attribute="rotation" from="0 -10 0" to="0 -90 0" dur="1000" delay="272000" easing="linear"></a-animation>
-				<a-animation attribute="rotation" from="0 -90 0" to="0 -10 0" dur="1000" delay="300000" easing="linear"></a-animation>
-				<a-animation attribute="rotation" from="0 -10 0" to="0 -90 0" dur="1000" delay="313000" easing="linear"></a-animation>
-				<a-animation attribute="rotation" from="0 -90 0" to="0 -10 0" dur="1000" delay="324000" easing="linear"></a-animation>
-				<a-animation attribute="rotation" from="0 -10 0" to="0 -90 0" dur="1000" delay="387000" easing="linear"></a-animation>
-				<a-animation attribute="rotation" from="0 -90 0" to="0 -10 0" dur="1000" delay="394000" easing="linear"></a-animation>
-				<a-animation attribute="rotation" from="0 -10 0" to="0 -100 0" dur="1000" delay="440000" easing="linear"></a-animation>
-				<a-animation attribute="position" from ="17.52 0 1.32" to="18.35 0 1.32" dur="1000" delay="463000" easing="linear"></a-animation>
-				<a-animation attribute="rotation" from="0 -100 0" to="-85.37 -122.61 -42.97" dur="1000" delay="475000" easing="linear"></a-animation>
+				<a-animation attribute="position" from ="16.9 0 1.32" to="17.52 0 1.32" dur="0" delay="218500" easing="linear"></a-animation>
+				<a-animation attribute="rotation" from="0 0 0" to="0 -90 0" dur="0" delay="218500" easing="linear"></a-animation>
+				<a-animation attribute="rotation" from="0 -90 0" to="0 -10 0" dur="1000" delay="220000" easing="linear"></a-animation>
+				<a-animation attribute="rotation" from="0 -10 0" to="0 -90 0" dur="1000" delay="270000" easing="linear"></a-animation>
+				<a-animation attribute="rotation" from="0 -90 0" to="0 -10 0" dur="1000" delay="298000" easing="linear"></a-animation>
+				<a-animation attribute="rotation" from="0 -10 0" to="0 -90 0" dur="1000" delay="311000" easing="linear"></a-animation>
+				<a-animation attribute="rotation" from="0 -90 0" to="0 -10 0" dur="1000" delay="322000" easing="linear"></a-animation>
+				<a-animation attribute="rotation" from="0 -10 0" to="0 -90 0" dur="1000" delay="385000" easing="linear"></a-animation>
+				<a-animation attribute="rotation" from="0 -90 0" to="0 -10 0" dur="1000" delay="392000" easing="linear"></a-animation>
+				<a-animation attribute="rotation" from="0 -10 0" to="0 -100 0" dur="1000" delay="438000" easing="linear"></a-animation>
+				<a-animation attribute="position" from ="17.52 0 1.32" to="18.35 0 1.32" dur="1000" delay="461000" easing="linear"></a-animation>
+				<a-animation attribute="rotation" from="0 -100 0" to="-85.37 -122.61 -42.97" dur="1000" delay="473000" easing="linear"></a-animation>
 
 
 			</a-entity>
@@ -262,8 +304,134 @@
 			<a-entity obj-model="obj: #bankO; mtl: #bankM" position="3.13 0 -3.47" rotation="0 180 0" scale="0.02 0.018 0.02" visible="" material=""></a-entity>
 			<a-entity obj-model="obj: #teeHausO; mtl: #teeHausM" position="-31.71 0 7.6" rotation="0 90 0" scale="0.2 0.2 0.2" visible="" material=""></a-entity>
 			<a-entity obj-model="obj: #bodenO; mtl: #bodenM" position="-3.99 -1.5 -0.29" rotation="0 90 0" scale="1.43 0.35 1.96" visible="" material=""></a-entity>
-			<a-entity obj-model="obj: #flussO; mtl: #flussM" position="12.75 -0.8 -0.29" rotation="0 90 0" scale="1.43 0.53 3" visible="" material="" sound="src: url(river.wav); autoplay: true; loop: true;"></a-entity>
+			<a-entity obj-model="obj: #flussO; mtl: #flussM" position="12.75 -0.8 -0.29" rotation="0 90 0" scale="1.43 0.53 3" visible="" material="" sound="src: url(river.mp3); autoplay: true; loop: true; volume: 1"></a-entity>
 			<a-entity obj-model="obj: #weideO; mtl: #weideM" position="17.5 0 1.38" rotation="0 180 0" scale="0.4 0.4 0.4" visible="" material=""></a-entity>
+
+			<script>
+
+				setTimeout(function(){
+    			document.getElementById("talk1").play();
+				}, 16200);
+
+				setTimeout(function(){
+    			document.getElementById("talk2").play();
+				}, 38300);
+
+				setTimeout(function(){
+    			document.getElementById("rain").play();
+				}, 38300);
+
+				setTimeout(function(){
+    			document.getElementById("talk3").play();
+				}, 92000);
+
+				setTimeout(function(){
+    			document.getElementById("talk31").play();
+				}, 131500);
+
+				setTimeout(function(){
+    			document.getElementById("talk4").play();
+				}, 219500);
+
+				setTimeout(function(){
+    			document.getElementById("talk5").play();
+				}, 401000);
+		
+			</script>
+
+			<script>
+				setTimeout(function(){
+				var light = document.getElementById("light");
+    			light.setAttribute('light', 'type:ambient;color:#000000');
+				}, 37300);
+
+				setTimeout(function(){
+				var light = document.getElementById("light");
+    			light.setAttribute('light', 'type:ambient;color:#294aa3');
+				}, 38300);
+
+				setTimeout(function(){
+				var light = document.getElementById("light");
+    			light.setAttribute('light', 'type:ambient;color:#000000');
+				}, 130500);
+
+				setTimeout(function(){
+				var light = document.getElementById("light");
+    			light.setAttribute('light', 'type:ambient;color:#336699');
+				}, 131500);
+
+				setTimeout(function(){
+				var light = document.getElementById("light");
+    			light.setAttribute('light', 'type:ambient;color:#000000');
+				}, 218500);
+
+				setTimeout(function(){
+				var light = document.getElementById("light");
+    			light.setAttribute('light', 'type:ambient;color:#ffffff');
+				}, 219500);
+
+				setTimeout(function(){
+				var light = document.getElementById("light");
+    			light.setAttribute('light', 'type:ambient;color:#404040');
+				}, 232000);
+
+				setTimeout(function(){
+				var light = document.getElementById("light");
+    			light.setAttribute('light', 'type:ambient;color:#ffffff');
+				}, 250000);
+
+				setTimeout(function(){
+				var light = document.getElementById("light");
+    			light.setAttribute('light', 'type:ambient;color:#000000');
+				}, 399000);
+
+				setTimeout(function(){
+				var light = document.getElementById("light");
+    			light.setAttribute('light', 'type:ambient;color:#ffffff');
+				}, 401000);
+			</script>
+
+			<script>
+				setTimeout(function(){
+				var sky = document.getElementById("sky");
+    			sky.setAttribute('material', 'color:#000000');
+				}, 37300);
+
+				setTimeout(function(){
+				var sky = document.getElementById("sky");
+    			sky.setAttribute('material', 'color:#898989');
+				}, 38300);
+
+				setTimeout(function(){
+				var sky = document.getElementById("sky");
+    			sky.setAttribute('material', 'color:#000000');
+				}, 130500);
+
+				setTimeout(function(){
+				var sky = document.getElementById("sky");
+    			sky.setAttribute('material', 'color:#6C99C9');
+				}, 131500);
+
+				setTimeout(function(){
+				var sky = document.getElementById("sky");
+    			sky.setAttribute('material', 'color:#000000');
+				}, 218500);
+
+				setTimeout(function(){
+				var sky = document.getElementById("sky");
+    			sky.setAttribute('material', 'color:#6C99C9');
+				}, 219500);
+
+				setTimeout(function(){
+				var sky = document.getElementById("sky");
+    			sky.setAttribute('material', 'color:#000000');
+				}, 399000);
+
+				setTimeout(function(){
+				var sky = document.getElementById("sky");
+    			sky.setAttribute('material', 'color:#6C99C9');
+				}, 401000);
+			</script>
 
 			</a-scene>
 		
